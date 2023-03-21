@@ -1,0 +1,35 @@
+<h2 class="mb-4">Daftar Contact</h2>
+<a href="/contact/add" class="btn btn-primary mt-3 mb-3">Tambah Contact</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">NO</th>
+      <th scope="col">NAMA</th>
+      <th scope="col">NO HP</th>
+    </tr>
+  </thead>
+  <% if (contacts.length === 0) { %>
+  <tbody>
+    <tr>
+      <td>
+        <div class="alert alert-danger" role="alert">
+          Data contact tidak ada
+        </div>
+      </td>
+    </tr>
+  </tbody>
+  <tbody>
+    <% } %> <% contacts.map((contact, i) => { %>
+    <tr>
+      <th scope="row"><%- i + 1 %></th>
+      <td><%- contact.nama %></td>
+      <td><%- contact.noHP %></td>
+      <td>
+        <a href="/contact/<%- contact.nama  %>" class="btn btn-primary"
+          >Detail</a
+        >
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>

@@ -1,0 +1,14 @@
+<% if (!contact) { %>
+<div class="alert alert-danger mt-5" role="alert">
+  Data contact <%= paramsContact %> tidak ada
+  <a href="/contact" class="btn btn-primary ms-3">Kembali</a>
+</div>
+<% } else { %>
+<div class="card mt-5" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title"><%= contact.nama %></h5>
+    <p class="card-text"><%= contact.noHP %></p>
+    <a href="/contact" class="card-link">Kembali</a>
+  </div>
+</div>
+<% } %>
